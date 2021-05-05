@@ -1,0 +1,16 @@
+UnitTests_internal = {
+    vehicle = {},
+    vehicles = {}
+}
+
+function StartVehicleHorn (vhc, time_ms, mode, forever)
+    if UnitTests_internal.vehicle[vhc] == nil then
+        UnitTests_internal.vehicle[vhc] = {}
+    end
+
+    UnitTests_internal.vehicle[vhc].horn = true
+end
+
+function IsHornActive (vhc)
+    return UnitTests_internal.vehicle[vhc].horn or false
+end
