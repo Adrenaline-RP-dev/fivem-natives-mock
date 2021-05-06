@@ -18,5 +18,8 @@ function StartVehicleHorn (vhc, time_ms, mode, forever)
 end
 
 function IsHornActive (vhc)
+    if UnitTests_internal.vehicle[vhc] == nil then
+        return false
+    end
     return UnitTests_internal.vehicle[vhc].horn or false
 end
